@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1e2f3g4h5i6"]
+
+[ext_resource type="Script" path="res://scripts/hud_ui.gd" id="1_hud"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="TopBar" type="PanelContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+
+[node name="HBox" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="WoodLabel" type="Label" parent="TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Wood: 150"
+
+[node name="StoneLabel" type="Label" parent="TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Stone: 50"
+
+[node name="FoodLabel" type="Label" parent="TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Food: 100"
+
+[node name="PopLabel" type="Label" parent="TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Pop: 4/10"

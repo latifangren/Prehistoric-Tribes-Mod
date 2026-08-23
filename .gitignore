@@ -1,0 +1,13 @@
+# Godot 4 auto-generated & imported files
+.godot/
+*.import
+export_presets.cfg.local
+
+# Android Export binaries
+bin/*.apk
+bin/*.aab
+
+# OS & IDE temporary files
+.DS_Store
+Thumbs.db
+*.tmp

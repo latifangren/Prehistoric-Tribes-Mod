@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8x1y2z3a4b5"]
+
+[ext_resource type="Script" path="res://scripts/isometric_map.gd" id="1_map"]
+[ext_resource type="Script" path="res://scripts/camera_touch_controller.gd" id="2_cam"]
+[ext_resource type="PackedScene" uid="uid://d1e2f3g4h5i6" path="res://scenes/hud_ui.tscn" id="3_hud"]
+[ext_resource type="Script" path="res://scripts/touch_selection_manager.gd" id="4_sel"]
+[ext_resource type="Script" path="res://scripts/building_manager.gd" id="5_bldg"]
+
+[node name="Main" type="Node2D"]
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="IsometricMap" type="Node2D" parent="."]
+script = ExtResource("1_map")
+
+[node name="TouchSelectionManager" type="Node2D" parent="."]
+script = ExtResource("4_sel")
+
+[node name="BuildingManager" type="Node2D" parent="."]
+script = ExtResource("5_bldg")
+
+[node name="TouchCamera2D" type="Camera2D" parent="."]
+position = Vector2(0, 300)
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("2_cam")
