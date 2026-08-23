@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+MIDlet-Name: Prehistoric Tribes
+MIDlet-Version: 0.1.28
+MIDlet-Vendor: THQ
+MIDlet-1: Prehistoric Tribes, icon.png, tribes
+MicroEdition-Profile: MIDP-2.0
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-Icon: /icon.png
+MIDlet-Info-URL: http://www.thqwireless.com
+Created-By: Metaflow
+Cheat-Support: on
+Content-Folder: Games
+GameUrl-en: http://wap.thqwireless.com
+GameUrl-de: http://wap.thqwireless.com
+GameUrl-fr: http://wap.thqwireless.com
+GameUrl-es: http://wap.thqwireless.com
+GameUrl-it: http://wap.thqwireless.com
+GameLinkEnabled: false
+
