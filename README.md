@@ -1,58 +1,43 @@
-# Prehistoric Tribes HD Remake (Godot 4)
+# Prehistoric Tribes - J2ME Mod & Reverse Engineering
 
-Modern HD Android & Cross-Platform Remake of the classic J2ME RTS game **Prehistoric Tribes**.
-
-Built with **Godot Engine 4.3** (Mobile / Forward+ Renderer), optimized for high-refresh-rate displays (120Hz+), crisp pixel-art scaling, and touch-screen RTS controls.
+Project reverse engineering, ekstraksi aset, dekompilasi, dan modding Android DEX untuk game J2ME RTS klasik **Prehistoric Tribes** (resolusi asli 240x320).
 
 ---
 
-## 🌟 Key Features
-
-* **High-Refresh-Rate Performance**: Smooth 120 FPS camera panning & rendering.
-* **4x Pixel-Art Upscaling**: Crisp HD pixel graphics for 1080p / 1440p AMOLED displays.
-* **Touch RTS Controls**: Multi-touch camera (pan & pinch-to-zoom), single-tap unit selection, and touch command system.
-* **Isometric Tile Renderer**: Custom 2D Isometric map renderer using upscaled original assets.
-* **Building Construction System**: Placement preview (green/red validation) & villager building tasks.
-* **Original Game Logic & Database**: Complete stats for buildings, weapons, traps, and villager roles.
-
----
-
-## 📁 Repository Structure
+## 📁 Struktur Repositori
 
 ```
 Prehistoric-Tribes-Mod/
-├── godot_project/          # Godot 4 Game Project Source
-│   ├── assets/             # 4x HD Upscaled Sprites, Tiles & Backgrounds
-│   ├── scenes/             # Game Scenes (main.tscn, hud_ui.tscn)
-│   ├── scripts/            # GDScript Controllers & Managers
-│   └── project.godot       # Godot 4 Configuration
-├── original_j2me/          # Original J2ME MIDlet (.jar & unpacked assets)
-├── .gitignore              # Git Ignore configuration
-└── README.md               # Documentation
+├── original/                   # File JAR J2ME asli dan aset terpartisi
+│   ├── Prehistoric_Tribes_240x320.jar
+│   ├── Prehistoric_Tribes_240x320/ # Ekstraksi class & game data (sprites, maps, sound)
+│   └── ...
+├── mod/                        # File modding & konversi Android
+│   ├── converted.dex           # Dalvik Executable hasil konversi bytecode
+│   ├── converted.dex.conf      # Konfigurasi konversi DEX
+│   ├── res.jar                 # Resource archive terkompilasi
+│   └── icon.png                # Ikon aplikasi mod
+├── cfr.jar                     # CFR Java Decompiler (tool dekompilasi .class)
+├── .gitignore
+└── README.md                   # Dokumentasi proyek
 ```
 
 ---
 
-## 🛠️ How to Build & Run
+## 🛠️ Alur Kerja & Penggunaan
 
-### Prerequisites
-* [Godot Engine 4.3](https://godotengine.org/download/) (Mobile / Standard edition)
-* Android SDK & NDK (if exporting APK to Android)
+### 1. Dekompilasi Bytecode Java (J2ME)
+Gunakan `cfr.jar` untuk mendekomposisi file `.class` dari direktori `original/`:
 
-### Running in Godot Editor
-1. Launch **Godot Engine 4.3**.
-2. Click **Import**, navigate to `godot_project/` and select `project.godot`.
-3. Press **F5** to run the main scene (`scenes/main.tscn`).
+```bash
+java -jar cfr.jar original/Prehistoric_Tribes_240x320/tribes.class --outputdir decompiled_src/
+```
 
-### Exporting APK for Android
-1. Open the project in Godot Engine.
-2. Go to **Project -> Export...**
-3. Select **Android APK** preset.
-4. Click **Export Project...** to generate `PrehistoricTribes_HD.apk`.
+### 2. Struktur Modding Android (`mod/`)
+* **`converted.dex`**: Bytecode yang telah dikonversi untuk berjalan di lingkungan Android Runtime (ART/Dalvik).
+* **`res.jar`**: Resource bundle pendukung untuk eksekusi mod.
 
 ---
 
-## 📄 Credits & Disclaimer
-
-* Original J2ME Game: *Prehistoric Tribes*
-* Port & Remake: Modernized for Android using Godot Engine 4.3.
+## 📄 Lisensi & Disclaimer
+Proyek ini dibuat untuk tujuan edukasi, preservasi game retro, dan penelitian reverse engineering. Hak cipta game asli milik pengembang/penerbit *Prehistoric Tribes*.
