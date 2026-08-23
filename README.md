@@ -12,13 +12,14 @@ Prehistoric-Tribes-Mod/
 │   ├── Prehistoric_Tribes_240x320.jar
 │   └── Prehistoric_Tribes_240x320/ # Ekstraksi class & game data asli
 ├── mod/                            # File modding & konversi Android
-│   ├── Prehistoric_Tribes_Mod.jar  # JAR ter-modifikasi (Cheat Enabled)
-│   ├── Prehistoric_Tribes_Mod/     # Folder aset ter-modifikasi
+│   ├── Prehistoric_Tribes_Mod.jar  # JAR ter-modifikasi (Cheat & Direct Shortcut)
+│   ├── Prehistoric_Tribes_Mod/     # Folder aset & class byte-patched
 │   ├── converted.dex               # Dalvik Executable hasil konversi bytecode
 │   ├── converted.dex.conf          # Konfigurasi konversi DEX (Cheat-Support: on)
 │   ├── res.jar                     # Resource archive terkompilasi
 │   └── icon.png                    # Ikon aplikasi mod
 ├── decompiled/                     # Kode sumber Java terdekompilasi (CFR)
+├── patch_mod.py                    # Script bytecode patcher (Single-Key Cheat)
 ├── cfr.jar                         # CFR Java Decompiler tool
 ├── .gitignore
 └── README.md                       # Dokumentasi proyek
@@ -26,18 +27,17 @@ Prehistoric-Tribes-Mod/
 
 ---
 
-## 🎮 Fitur Mod & Cheat Code
+## 🎮 Fitur Mod & Shortcut Tombol Cheat (In-Game)
 
-Dukungan **Cheat-Support** telah diaktifkan secara native di `mod/Prehistoric_Tribes_Mod/META-INF/MANIFEST.MF` dan `mod/converted.dex.conf`.
+Dukungan **Cheat-Support** dan **Direct Single-Key Shortcut** telah diaktifkan secara native di `mod/Prehistoric_Tribes_Mod/f.class`.
 
-### Kombinasi Tombol Cheat (In-Game)
-Tekan urutan tombol angka berikut saat permainan berlangsung:
-1. Masukkan kode aktivasi: **`8` `7` `3` `9` `1`**
-2. Lalu tekan salah satu tombol berikut untuk mengaktifkan efek:
-   * **`1`**: **Unlock All Levels** & God mode / Map reveal.
-   * **`3`**: **Speedup / Instant Kill** mode.
-   * **`7`**: **Resource Boost** (+100 Makanan, Kayu, Batu, Emas, Besi, serta +3 Senjata & Jebakan).
-   * **`9`**: **Instant Win** (Langsung selesaikan misi/level saat ini).
+### Tombol Cheat Praktis (1-Klik Langsung Aktif):
+Cukup tekan **satu tombol angka** saat permainan berlangsung (tidak perlu mengetik kombinasi rumit):
+
+* **`1`**: **Unlock All Levels** & God mode / Map reveal.
+* **`3`**: **Speedup / Instant Kill** mode.
+* **`7`**: **Instant Resource Boost** (+127 Makanan, Kayu, Batu, Emas, Besi, serta +3 Senjata per tekan).
+* **`9`**: **Instant Win** (Langsung selesaikan misi/level saat ini).
 
 ---
 
@@ -48,6 +48,8 @@ Gunakan `cfr.jar` untuk mendekomposisi file `.class` dari direktori `original/`:
 ```bash
 java -jar cfr.jar original/Prehistoric_Tribes_240x320/*.class --outputdir decompiled/
 ```
+
+Gunakan script `patch_mod.py` untuk mengaplikasikan patch bytecode langsung pada file `mod/Prehistoric_Tribes_Mod/f.class`.
 
 ---
 
