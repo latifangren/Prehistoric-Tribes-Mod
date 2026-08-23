@@ -8,7 +8,7 @@ MicroEdition-Configuration: CLDC-1.0
 MIDlet-Icon: /icon.png
 MIDlet-Info-URL: http://www.thqwireless.com
 Created-By: Metaflow
-Cheat-Support: off
+Cheat-Support: on
 Content-Folder: Games
 GameUrl-en: http://wap.thqwireless.com
 GameUrl-de: http://wap.thqwireless.com
