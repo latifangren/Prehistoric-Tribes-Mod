@@ -14,28 +14,39 @@ Prehistoric-Tribes-Mod/
 │   └── ...
 ├── mod/                        # File modding & konversi Android
 │   ├── converted.dex           # Dalvik Executable hasil konversi bytecode
-│   ├── converted.dex.conf      # Konfigurasi konversi DEX
+│   ├── converted.dex.conf      # Konfigurasi konversi DEX (Cheat-Support: on)
 │   ├── res.jar                 # Resource archive terkompilasi
 │   └── icon.png                # Ikon aplikasi mod
-├── cfr.jar                     # CFR Java Decompiler (tool dekompilasi .class)
+├── decompiled/                 # Kode sumber Java terdekompilasi (CFR)
+├── cfr.jar                     # CFR Java Decompiler tool
 ├── .gitignore
 └── README.md                   # Dokumentasi proyek
 ```
 
 ---
 
-## 🛠️ Alur Kerja & Penggunaan
+## 🎮 Fitur Mod & Cheat Code
 
-### 1. Dekompilasi Bytecode Java (J2ME)
+Dukungan **Cheat-Support** telah diaktifkan secara native di `MANIFEST.MF` dan `converted.dex.conf`.
+
+### Kombinasi Tombol Cheat (In-Game)
+Tekan urutan tombol angka berikut saat permainan berlangsung:
+1. Masukkan kode aktivasi: **`8` `7` `3` `9` `1`**
+2. Lalu tekan salah satu tombol berikut untuk mengaktifkan efek:
+   * **`1`**: **Unlock All Levels** & God mode / Map reveal.
+   * **`3`**: **Speedup / Instant Kill** mode.
+   * **`7`**: **Resource Boost** (+100 Makanan, Kayu, Batu, Emas, Besi, serta +3 Senjata & Jebakan).
+   * **`9`**: **Instant Win** (Langsung selesaikan misi/level saat ini).
+
+---
+
+## 🛠️ Alur Kerja & Dekompilasi
+
 Gunakan `cfr.jar` untuk mendekomposisi file `.class` dari direktori `original/`:
 
 ```bash
-java -jar cfr.jar original/Prehistoric_Tribes_240x320/tribes.class --outputdir decompiled_src/
+java -jar cfr.jar original/Prehistoric_Tribes_240x320/*.class --outputdir decompiled/
 ```
-
-### 2. Struktur Modding Android (`mod/`)
-* **`converted.dex`**: Bytecode yang telah dikonversi untuk berjalan di lingkungan Android Runtime (ART/Dalvik).
-* **`res.jar`**: Resource bundle pendukung untuk eksekusi mod.
 
 ---
 
