@@ -8,26 +8,27 @@ Project reverse engineering, ekstraksi aset, dekompilasi, dan modding Android DE
 
 ```
 Prehistoric-Tribes-Mod/
-├── original/                   # File JAR J2ME asli dan aset terpartisi
+├── original/                       # File JAR J2ME asli (unmodded)
 │   ├── Prehistoric_Tribes_240x320.jar
-│   ├── Prehistoric_Tribes_240x320/ # Ekstraksi class & game data (sprites, maps, sound)
-│   └── ...
-├── mod/                        # File modding & konversi Android
-│   ├── converted.dex           # Dalvik Executable hasil konversi bytecode
-│   ├── converted.dex.conf      # Konfigurasi konversi DEX (Cheat-Support: on)
-│   ├── res.jar                 # Resource archive terkompilasi
-│   └── icon.png                # Ikon aplikasi mod
-├── decompiled/                 # Kode sumber Java terdekompilasi (CFR)
-├── cfr.jar                     # CFR Java Decompiler tool
+│   └── Prehistoric_Tribes_240x320/ # Ekstraksi class & game data asli
+├── mod/                            # File modding & konversi Android
+│   ├── Prehistoric_Tribes_Mod.jar  # JAR ter-modifikasi (Cheat Enabled)
+│   ├── Prehistoric_Tribes_Mod/     # Folder aset ter-modifikasi
+│   ├── converted.dex               # Dalvik Executable hasil konversi bytecode
+│   ├── converted.dex.conf          # Konfigurasi konversi DEX (Cheat-Support: on)
+│   ├── res.jar                     # Resource archive terkompilasi
+│   └── icon.png                    # Ikon aplikasi mod
+├── decompiled/                     # Kode sumber Java terdekompilasi (CFR)
+├── cfr.jar                         # CFR Java Decompiler tool
 ├── .gitignore
-└── README.md                   # Dokumentasi proyek
+└── README.md                       # Dokumentasi proyek
 ```
 
 ---
 
 ## 🎮 Fitur Mod & Cheat Code
 
-Dukungan **Cheat-Support** telah diaktifkan secara native di `MANIFEST.MF` dan `converted.dex.conf`.
+Dukungan **Cheat-Support** telah diaktifkan secara native di `mod/Prehistoric_Tribes_Mod/META-INF/MANIFEST.MF` dan `mod/converted.dex.conf`.
 
 ### Kombinasi Tombol Cheat (In-Game)
 Tekan urutan tombol angka berikut saat permainan berlangsung:
