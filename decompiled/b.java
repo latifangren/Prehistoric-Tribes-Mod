@@ -4133,9 +4133,8 @@ public final class b {
                         this.a[this.u][18] = 0;
                         if (this.u == 1 && this.Q > 0) {
                             return;
-                        } else {
-                            ** GOTO lbl23
                         }
+                        break block10;
                     }
                     break block10;
                 }

@@ -5707,7 +5707,8 @@ implements Runnable {
                             if (this.c[this.e[101 + var1_1]][this.e[0 + var1_1]] == var1_1) break block8;
                             if (var3_3) break block9;
                             this.e[2828 + var1_1] = 87;
-                            ** GOTO lbl-1000
+                            this.e[6161 + var1_1] = 3;
+                            break block10;
                         }
                         this.e[6161 + var1_1] = 2;
                         break block10;
@@ -5722,10 +5723,7 @@ implements Runnable {
                     if (var3_3) {
                         this.e[6161 + var1_1] = 2;
                         this.e[4747 + var1_1] = 0;
-                    } else lbl-1000:
-                    // 2 sources
-
-                    {
+                    } else {
                         this.e[6161 + var1_1] = 3;
                     }
                 }
